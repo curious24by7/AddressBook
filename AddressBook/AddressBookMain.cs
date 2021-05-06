@@ -11,7 +11,7 @@ namespace AddressBook
         static void Main(string[] args)
         {
             Console.WriteLine("Hello! Welcome to Address Book.");
-            Console.WriteLine("=================================\nChoose the operation:\n1.Add Contact.\n2.View Saved Contacts.\n3.Edit Existing Contact.\n4.Delete Existing Contact.\n5.Exit Adress Book Application.\n=================================");
+            Console.WriteLine("=================================\nChoose the operation:\n1.Add Contact.\n2.View Saved Contacts.\n3.Edit Existing Contact.\n4.Delete Existing Contact.\n7.Search Person via City.\n6.Exit Adress Book Application.\n=================================");
             var userInput = Console.ReadLine();
             var addressBook = new AddressBook();
             
@@ -36,6 +36,9 @@ namespace AddressBook
                         break;
                     case "6":
                         return;
+                    case "7":
+                        addressBook.SearchPerson();
+                        break;
                     default:
                         Console.WriteLine("!!! Choose valid operation !!!");
                         break;

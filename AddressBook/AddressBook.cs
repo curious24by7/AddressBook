@@ -144,5 +144,17 @@ namespace AddressBook
             DictName.Add(addressbookName, newContact);
             Console.WriteLine("===========================================\nDuplicate checker passed contact added successfully.\n===========================================");
         }
+        public void SearchPerson()
+        {
+            Console.WriteLine("Enter City or State to search person::");
+            string city = Console.ReadLine();
+            foreach(var element in DictName)
+            {
+                if (element.Value.City.Equals(city))
+                {
+                    Console.WriteLine(element.Value.FirstName);
+                }
+            }
+        }
     }
 }
