@@ -158,6 +158,10 @@ namespace AddressBook
                 {
                     Console.WriteLine(element.Value.FirstName);
                 }
+                else
+                {
+                    Console.WriteLine("No such City or State stored in your addressbook.\nAvailable city and states are ::\n Cites:: " + element.Value.City + "\nStates:: " + element.Value.State);
+                }
             }
         }
     }
