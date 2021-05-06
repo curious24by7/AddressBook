@@ -11,7 +11,7 @@ namespace AddressBook
         static void Main(string[] args)
         {
             Console.WriteLine("Hello! Welcome to Address Book.");
-            Console.WriteLine("=================================\nChoose the operation:\n1.Add Contact.\n2.View Saved Contacts.\n3.Edit Existing Contact.\n4.Delete Existing Contact.\n7.Search Person via City.\n6.Exit Adress Book Application.\n=================================");
+            Console.WriteLine("=================================\nPress 1 to Create AddressBook and add Contact. \nPress 2 to Exit Adress Book Application.\n=================================");
             var userInput = Console.ReadLine();
             var addressBook = new AddressBook();
             
@@ -23,19 +23,19 @@ namespace AddressBook
                         addressBook.StoreContact();
                         break;
                     case "2":
+                        return;
+                    case "3":
                         addressBook.DisplayAllContact();
                         break;
-                    case "3":
+                    case "4":
                         addressBook.EditContact();
                         break;
-                    case "4":
+                    case "5":
                         addressBook.DeleteContact();
                         break;
-                    case "5":
+                    case "6":
                         addressBook.DuplicateChecker();
                         break;
-                    case "6":
-                        return;
                     case "7":
                         addressBook.SearchPerson();
                         break;
@@ -43,7 +43,7 @@ namespace AddressBook
                         Console.WriteLine("!!! Choose valid operation !!!");
                         break;
                 }
-                Console.WriteLine("Choose the operation::\n2.View Saved Contacts.\n3.Edit Existing Contact.\n4.Delete Existing Contact.\n5.Add Another Contact.\n6.Exit Adress Book Application.\n=================================");
+                Console.WriteLine("Choose the operation::\n3.View Saved Contacts.\n4.Edit Existing Contact.\n5.Delete Existing Contact.\n6.Add Another Contact.\n7.Search Person Name on Basis of City or State.\n...Press 2 for exiting the Adress Book Application.\n=================================");
                 userInput = Console.ReadLine();
             }
         }
