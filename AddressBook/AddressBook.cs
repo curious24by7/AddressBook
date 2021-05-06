@@ -14,7 +14,6 @@ namespace AddressBook
             List.Add(addcontact);
         }
         public Dictionary<string, Contact> DictName = new Dictionary<string, Contact>();
-
         public void StoreContact()
         {
             Console.WriteLine("Enter a unique name to your Addressbook:");
@@ -35,6 +34,7 @@ namespace AddressBook
             string phonenumber = Console.ReadLine();
             Console.WriteLine("Email:");
             string email = Console.ReadLine();
+            Console.WriteLine("=================================\nCONTACT CREATED SUCCESSFULLY\n=================================");
             var newContact = new Contact(firstname, lastname, address, city, state, zipcode, phonenumber, email);
             DictName.Add(addressbookName, newContact);
         }
@@ -99,6 +99,42 @@ namespace AddressBook
                     List.Remove(contact);
                     Console.WriteLine("---------------------------------\n!!Contact Removed!!");
                     break;
+                }
+            }
+        }
+        public void DuplicateChecker()
+        {
+            Console.WriteLine("Enter a unique name to your Addressbook:");
+            string addressbookName = Console.ReadLine();
+            Console.WriteLine("First Name:");
+            string name = Console.ReadLine();
+            
+            foreach (var element in DictName)
+            {
+                if (element.Value.FirstName.Equals(name))
+                {
+                    Console.WriteLine("=================================\nEntered Person Name already exist in Addressbook in AddressBook::\n" + element.Key+ "\n=================================");
+                }
+                else
+                {
+                    string newName = name;
+                    Console.WriteLine("Last Name:");
+                    string lastname = Console.ReadLine();
+                    Console.WriteLine("Address:");
+                    string address = Console.ReadLine();
+                    Console.WriteLine("City:");
+                    string city = Console.ReadLine();
+                    Console.WriteLine("State:");
+                    string state = Console.ReadLine();
+                    Console.WriteLine("Zip Code:");
+                    string zipcode = Console.ReadLine();
+                    Console.WriteLine("Phone Number:");
+                    string phonenumber = Console.ReadLine();
+                    Console.WriteLine("Email:");
+                    string email = Console.ReadLine();
+                    var newContact = new Contact(newName, lastname, address, city, state, zipcode, phonenumber, email);
+                    DictName.Add(addressbookName, newContact);
+                    Console.WriteLine("=================================\nDuplicate checker passed contact added successfully.\n=================================");
                 }
             }
         }
