@@ -154,6 +154,10 @@ namespace AddressBook
                 {
                     Console.WriteLine(element.Value.FirstName);
                 }
+                if (element.Value.State.Equals(city))
+                {
+                    Console.WriteLine(element.Value.FirstName);
+                }
             }
         }
     }
