@@ -152,11 +152,11 @@ namespace AddressBook
             {
                 if (element.Value.City.Equals(city))
                 {
-                    Console.WriteLine(element.Value.FirstName);
+                    Console.WriteLine("Contact(s) in found in "+city+":: " +element.Value.FirstName);
                 }
-                if (element.Value.State.Equals(city))
+                else if (element.Value.State.Equals(city))
                 {
-                    Console.WriteLine(element.Value.FirstName);
+                    Console.WriteLine("Contact(s) in found in " +city + ":: " +element.Value.FirstName);
                 }
                 else
                 {
