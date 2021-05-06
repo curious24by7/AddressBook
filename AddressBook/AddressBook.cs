@@ -150,15 +150,15 @@ namespace AddressBook
             {
                 if (element.Value.City.Equals(city))
                 {
-                    Console.WriteLine(element.Value.FirstName);
+                    Console.WriteLine("Contact(s) in found in " + city + ":: " + element.Value.FirstName);
                 }
-                if (element.Value.State.Equals(city))
+                else if (element.Value.State.Equals(city))
                 {
-                    Console.WriteLine(element.Value.FirstName);
+                    Console.WriteLine("Contact(s) in found in " + city + ":: " + element.Value.FirstName);
                 }
                 else
                 {
-                    Console.WriteLine("===========================================\nNo such City or State stored in your addressbook.\nAvailable city and states are ::\nCites:: " + element.Value.City + "\nStates:: " + element.Value.State + "\n===========================================");
+                    Console.WriteLine("No such City or State stored in your addressbook.\nAvailable city and states are ::\n Cites:: " + element.Value.City + "\nStates:: " + element.Value.State);
                 }
             }
         }
