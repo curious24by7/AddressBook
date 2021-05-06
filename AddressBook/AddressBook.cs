@@ -43,6 +43,7 @@ namespace AddressBook
             foreach (var element in DictName)
             {
                 Console.WriteLine("----------------\nADDRESSBOOK :\n----------------\nAddressbook Key: " +element.Key+ "\nPerson's Name: "+ element.Value.FirstName+" "+element.Value.LastName+ "\nAddress: " +element.Value.Address+ "\nCity: " +element.Value.City+ "\nState: " +element.Value.State+"\nZip Code: " +element.Value.ZipCode+ "\nPhone Number: " +element.Value.PhoneNumber+ "\nEmail: " +element.Value.Email);
+                Console.WriteLine("=================================");
             }
         }
         public void EditContact()
@@ -50,9 +51,9 @@ namespace AddressBook
             Console.WriteLine("Available Addressbooks are:: ");
             foreach(var key in DictName)
             {
-                Console.WriteLine(key.Key+"\n----------------");
+                Console.WriteLine(key.Key+"\n-------");
             }
-            Console.WriteLine("------------------\nEnter Name of the AddressBook you want to edit:: ");
+            Console.WriteLine("Enter Name of the AddressBook you want to edit:: ");
             string dictName = Console.ReadLine();
 
             foreach (var element in DictName)
@@ -83,22 +84,25 @@ namespace AddressBook
                     Console.WriteLine("Enter new Email:");
                     string newEmail = Console.ReadLine();
                     element.Value.Email = newEmail;
-                    Console.WriteLine("---------------------------------\n!!Contact Edited!!");
+                    Console.WriteLine("=================================\nCONTACT EDITID SUCCESSFULLY\n=================================");
                 }
             }
-            
         }
         public void DeleteContact()
         {  
             Console.WriteLine("Enter First Name of the Contact you want to Delete:");
             string name = Console.ReadLine();
-            foreach (var contact in List)
+            foreach (var nameElement in DictName)
             {
-                if (contact.FirstName == name)
+                if (nameElement.Value.FirstName == name)
                 {
-                    List.Remove(contact);
-                    Console.WriteLine("---------------------------------\n!!Contact Removed!!");
+                    DictName.Remove(nameElement.Key);
+                    Console.WriteLine("=================================\n!! CONTACT DELETED SUCCESSFULLY !!\n=================================");
                     break;
+                }
+                else
+                {
+                    Console.WriteLine("=================================\n!! NO SUCH CONTACT FOUND YOUR ADDRESSBOOK !!\n=================================");
                 }
             }
         }
