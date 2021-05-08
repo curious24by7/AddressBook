@@ -170,11 +170,11 @@ namespace AddressBook
             {
                 if (element.Value.FirstName.Equals(person))
                 {
-                    Console.WriteLine(person+ " lives in :: '"+element.Value.City+"' City and '"+element.Value.State+"' State.");
+                    Console.WriteLine("\n"+person+ " lives in :: '"+element.Value.City+"' City and '"+element.Value.State+"' State.\n");
                 }
                 else
                 {
-                    Console.WriteLine("No such Person found in Addressbook.\nAvailable person in your addressbook are :: "+element.Value.FirstName);
+                    Console.WriteLine("No such Person found in Addressbook.\n\nAvailable person in your addressbook are :: "+element.Value.FirstName+"\n");
                 }
             }
         }
