@@ -162,5 +162,21 @@ namespace AddressBook
                 }
             }
         }
+        public void FindCityState()
+        {
+            Console.WriteLine("Enter First Name of a Person to View his City and State::");
+            string person = Console.ReadLine();
+            foreach(var element in DictName)
+            {
+                if (element.Value.FirstName.Equals(person))
+                {
+                    Console.WriteLine(person+ " lives in :: '"+element.Value.City+"' City and '"+element.Value.State+"' State.");
+                }
+                else
+                {
+                    Console.WriteLine("No such Person found in Addressbook.\nAvailable person in your addressbook are :: "+element.Value.FirstName);
+                }
+            }
+        }
     }
 }
