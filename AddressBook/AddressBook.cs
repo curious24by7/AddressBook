@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AddressBook
 {
-    class AddressBook
+    class AddressBook : Exception
     {
         public List<Contact> List = new List<Contact>();
         public void AddContact(Contact addcontact)
@@ -139,8 +139,15 @@ namespace AddressBook
             Console.WriteLine("Email:");
             string email = Console.ReadLine();
             var newContact = new Contact(newName, lastname, address, city, state, zipcode, phonenumber, email);
-            DictName.Add(addressbookName, newContact);
-            Console.WriteLine("===========================================\nDuplicate checker passed contact added successfully.\n===========================================");
+            try
+            {
+                DictName.Add(addressbookName, newContact);
+                Console.WriteLine("===========================================\nDuplicate checker passed contact added successfully.\n===========================================");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
         public void SearchPerson()
         {
