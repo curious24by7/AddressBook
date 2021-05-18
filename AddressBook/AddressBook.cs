@@ -46,7 +46,7 @@ namespace AddressBook
             }
             foreach (var element in DictName)
             {
-                Console.WriteLine("----------------\nADDRESSBOOK :\n----------------\nAddressbook Key: " + element.Key + "\nPerson's Name: " + element.Value.FirstName + " " + element.Value.LastName + "\nAddress: " + element.Value.Address + "\nCity: " + element.Value.City + "\nState: " + element.Value.State + "\nZip Code: " + element.Value.ZipCode + "\nPhone Number: " + element.Value.PhoneNumber + "\nEmail: " + element.Value.Email);
+                Console.WriteLine("----------------\nADDRESSBOOK\n----------------\nAddressbook Key: " + element.Key + "\nPerson's Name: " + element.Value.FirstName + " " + element.Value.LastName + "\nAddress: " + element.Value.Address + "\nCity: " + element.Value.City + "\nState: " + element.Value.State + "\nZip Code: " + element.Value.ZipCode + "\nPhone Number: " + element.Value.PhoneNumber + "\nEmail: " + element.Value.Email);
                 Console.WriteLine("=================================");
             }
         }
@@ -110,43 +110,52 @@ namespace AddressBook
                 }
             }
         }
-        public void DuplicateChecker()
+        public void DuplicateChecker() //continues adding the further details even if checker fails. try not equal to in if.
         {
             Console.WriteLine("Enter a unique name to your Addressbook:");
             string addressbookName = Console.ReadLine();
             Console.WriteLine("First Name:");
             string name = Console.ReadLine();
+            bool x = new bool();
             foreach (var element in DictName)
             {
                 if (element.Value.FirstName.Equals(name))
                 {
                     Console.WriteLine("=================================\nEntered Person Name already exist in Addressbook in AddressBook::\n" + element.Key + "\n=================================");
+                    x = true;
                 }
             }
-            string newName = name;
-            Console.WriteLine("Last Name:");
-            string lastname = Console.ReadLine();
-            Console.WriteLine("Address:");
-            string address = Console.ReadLine();
-            Console.WriteLine("City:");
-            string city = Console.ReadLine();
-            Console.WriteLine("State:");
-            string state = Console.ReadLine();
-            Console.WriteLine("Zip Code:");
-            string zipcode = Console.ReadLine();
-            Console.WriteLine("Phone Number:");
-            string phonenumber = Console.ReadLine();
-            Console.WriteLine("Email:");
-            string email = Console.ReadLine();
-            var newContact = new Contact(newName, lastname, address, city, state, zipcode, phonenumber, email);
-            try
+            if (x == true)
             {
-                DictName.Add(addressbookName, newContact);
-                Console.WriteLine("===========================================\nDuplicate checker passed contact added successfully.\n===========================================");
+                return;
             }
-            catch(Exception e)
+            if (x == false)
             {
-                Console.WriteLine(e.Message);
+                string newName = name;
+                Console.WriteLine("Last Name:");
+                string lastname = Console.ReadLine();
+                Console.WriteLine("Address:");
+                string address = Console.ReadLine();
+                Console.WriteLine("City:");
+                string city = Console.ReadLine();
+                Console.WriteLine("State:");
+                string state = Console.ReadLine();
+                Console.WriteLine("Zip Code:");
+                string zipcode = Console.ReadLine();
+                Console.WriteLine("Phone Number:");
+                string phonenumber = Console.ReadLine();
+                Console.WriteLine("Email:");
+                string email = Console.ReadLine();
+                var newContact = new Contact(newName, lastname, address, city, state, zipcode, phonenumber, email);
+                try
+                {
+                    DictName.Add(addressbookName, newContact);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                Console.WriteLine("===========================================\nDuplicate checker passed contact added successfully.\n===========================================");
             }
         }
         public void SearchPerson()
@@ -159,7 +168,7 @@ namespace AddressBook
                 {
                     Console.WriteLine("Contact(s) in found in " + city + ":: " + element.Value.FirstName);
                 }
-                if (element.Value.State.Equals(city))
+                else if (element.Value.State.Equals(city))
                 {
                     Console.WriteLine("Contact(s) in found in " + city + ":: " + element.Value.FirstName);
                 }
@@ -169,7 +178,7 @@ namespace AddressBook
                 }
             }
         }
-        public void FindCityState()
+        public void FindCityState() //fix condition statement. Prints everything.
         {
             Console.WriteLine("Enter First Name of a Person to View his City and State::");
             string person = Console.ReadLine();
