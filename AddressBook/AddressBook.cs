@@ -119,7 +119,7 @@ namespace AddressBook
             bool x = new bool();
             foreach (var element in DictName)
             {
-                if (element.Value.FirstName.Equals(name))
+                if (element.Value.FirstName.Equals(name.ToLower()))
                 {
                     Console.WriteLine("=================================\nEntered Person Name already exist in Addressbook in AddressBook::\n" + element.Key + "\n=================================");
                     x = true;
