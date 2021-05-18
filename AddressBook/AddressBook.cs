@@ -110,7 +110,7 @@ namespace AddressBook
                 }
             }
         }
-        public void DuplicateChecker() //continues adding the further details even if checker fails. try not equal to in if.
+        public void DuplicateChecker()
         {
             Console.WriteLine("Enter a unique name to your Addressbook:");
             string addressbookName = Console.ReadLine();
@@ -182,15 +182,27 @@ namespace AddressBook
         {
             Console.WriteLine("Enter First Name of a Person to View his City and State::");
             string person = Console.ReadLine();
+            bool x = new bool();
             foreach(var element in DictName)
             {
                 if (element.Value.FirstName.Equals(person))
                 {
-                    Console.WriteLine("\n"+person+ " lives in :: '"+element.Value.City+"' City and '"+element.Value.State+"' State.\n");
+                    x = true;
                 }
-                else
+            }
+            if (x==true)
+            {
+                Console.WriteLine(DictName.Values);
+                //foreach (var element in DictName)
+                //{
+                //    Console.WriteLine("\n" + person + " lives in :: '" + element.Value.City + "' City and '" + element.Value.State + "' State.\n");
+                //}
+            }
+            else
+            {
+                foreach (var element in DictName)
                 {
-                    Console.WriteLine("No such Person found in Addressbook.\n\nAvailable person in your addressbook are :: "+element.Value.FirstName+"\n");
+                    Console.WriteLine("No such Person found in Addressbook.\n\nAvailable person in your addressbook are :: " + element.Value.FirstName + "\n");
                 }
             }
         }
