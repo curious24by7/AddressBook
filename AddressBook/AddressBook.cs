@@ -164,7 +164,7 @@ namespace AddressBook
             string city = Console.ReadLine();
             foreach(var element in DictName)
             {
-                if (element.Value.City.Equals(city))
+                if (element.Value.City.Equals(city.ToLower()))
                 {
                     Console.WriteLine("Contact(s) in found in " + city + ":: " + element.Value.FirstName);
                 }
@@ -185,7 +185,7 @@ namespace AddressBook
             bool x = new bool();
             foreach(var element in DictName)
             {
-                if (element.Value.FirstName.Equals(person))
+                if (element.Value.FirstName.Equals(person.ToLower()))
                 {
                     x = true;
                 }
@@ -194,7 +194,7 @@ namespace AddressBook
             {
                 foreach (var element in DictName)
                 {
-                    Console.WriteLine("\n" + person + " lives in :: '" + element.Value.City + "' City and '" + element.Value.State + "' State.\n");
+                    Console.WriteLine("\n" + element.Value.FirstName + " lives in :: '" + element.Value.City + "' City and '" + element.Value.State + "' State.\n");
                 }
             }
             else
@@ -212,11 +212,11 @@ namespace AddressBook
             int countPerson = 0;
             foreach(var element in DictName)
             {
-                if (element.Value.City.Equals(cityState))
+                if (element.Value.City.Equals(cityState.ToLower()))
                 {
                     countPerson++;
                 }
-                if(element.Value.State.Equals(cityState))
+                if(element.Value.State.Equals(cityState.ToLower()))
                 {
                     countPerson++;
                 }
