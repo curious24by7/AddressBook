@@ -178,7 +178,7 @@ namespace AddressBook
                 }
             }
         }
-        public void FindCityState() //fix condition statement. Prints everything.
+        public void FindCityState()
         {
             Console.WriteLine("Enter First Name of a Person to View his City and State::");
             string person = Console.ReadLine();
@@ -192,11 +192,10 @@ namespace AddressBook
             }
             if (x==true)
             {
-                Console.WriteLine(DictName.Values);
-                //foreach (var element in DictName)
-                //{
-                //    Console.WriteLine("\n" + person + " lives in :: '" + element.Value.City + "' City and '" + element.Value.State + "' State.\n");
-                //}
+                foreach (var element in DictName)
+                {
+                    Console.WriteLine("\n" + person + " lives in :: '" + element.Value.City + "' City and '" + element.Value.State + "' State.\n");
+                }
             }
             else
             {
