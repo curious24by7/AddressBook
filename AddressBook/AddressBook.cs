@@ -39,6 +39,7 @@ namespace AddressBook
             DictName.Add(addressbookName, newContact);
             FileIO.WriteDataToTxt(DictName);
             FileIO.WriteDataToCSV(DictName);
+            Json.WriteToJson(DictName);
         }
         public void DisplayAllContact()
         {
@@ -154,6 +155,7 @@ namespace AddressBook
                     DictName.Add(addressbookName, newContact);
                     FileIO.WriteDataToTxt(DictName);
                     FileIO.WriteDataToCSV(DictName);
+                    Json.WriteToJson(DictName);
                 }
                 catch (Exception e)
                 {
