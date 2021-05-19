@@ -37,6 +37,7 @@ namespace AddressBook
             Console.WriteLine("=================================\nCONTACT CREATED SUCCESSFULLY\n=================================");
             var newContact = new Contact(firstname, lastname, address, city, state, zipcode, phonenumber, email);
             DictName.Add(addressbookName, newContact);
+            FileIO.WriteDataToTxt(DictName);
         }
         public void DisplayAllContact()
         {
@@ -150,6 +151,7 @@ namespace AddressBook
                 try
                 {
                     DictName.Add(addressbookName, newContact);
+                    FileIO.WriteDataToTxt(DictName);
                 }
                 catch (Exception e)
                 {

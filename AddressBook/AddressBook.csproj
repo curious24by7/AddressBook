@@ -46,10 +46,14 @@
     <Compile Include="AddressBook.cs" />
     <Compile Include="AddressBookMain.cs" />
     <Compile Include="Contact.cs" />
+    <Compile Include="FileIO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StoredContact.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
