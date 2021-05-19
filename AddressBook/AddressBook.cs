@@ -226,7 +226,6 @@ namespace AddressBook
         }
         public void ChooseSort()
         {
-            Sort sort = new Sort();
             Console.WriteLine("Sort By:-");
             Console.WriteLine("1.Name\n2.City\n3.State\n4.ZipCode");
             var choice = Console.ReadLine();
@@ -264,7 +263,6 @@ namespace AddressBook
                     Console.WriteLine("=================================\n!!! Choose valid operation !!!\n=================================");
                     break;
             }
-
         }
     }
 }
