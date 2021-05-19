@@ -51,9 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Files\StoredContactTable.csv" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="StoredContact.txt" />
+    <Content Include="Files\StoredContact.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

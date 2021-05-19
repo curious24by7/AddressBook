@@ -38,6 +38,7 @@ namespace AddressBook
             var newContact = new Contact(firstname, lastname, address, city, state, zipcode, phonenumber, email);
             DictName.Add(addressbookName, newContact);
             FileIO.WriteDataToTxt(DictName);
+            FileIO.WriteDataToCSV(DictName);
         }
         public void DisplayAllContact()
         {
@@ -152,6 +153,7 @@ namespace AddressBook
                 {
                     DictName.Add(addressbookName, newContact);
                     FileIO.WriteDataToTxt(DictName);
+                    FileIO.WriteDataToCSV(DictName);
                 }
                 catch (Exception e)
                 {
