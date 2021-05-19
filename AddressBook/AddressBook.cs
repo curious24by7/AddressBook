@@ -119,9 +119,9 @@ namespace AddressBook
             bool x = new bool();
             foreach (var element in DictName)
             {
-                if (element.Value.FirstName.Equals(name.ToLower()))
+                if (element.Value.FirstName.Equals(name))
                 {
-                    Console.WriteLine("=================================\nEntered Person Name already exist in Addressbook in AddressBook::\n" + element.Key + "\n=================================");
+                    Console.WriteLine("=================================\nEntered Person Name already exist in Addressbook named::\n" + element.Key + "\n=================================");
                     x = true;
                 }
             }
@@ -223,6 +223,14 @@ namespace AddressBook
 
             }
             Console.WriteLine("\nNumber of Person found in " + cityState + " are " + countPerson);
+        }
+        public void SortByPersonName()
+        {
+            Dictionary<string, Contact> sortList = DictName.OrderBy(x => x.Value.FirstName).ToDictionary(x => x.Key, x => x.Value);
+            foreach(var element in sortList)
+            {
+                Console.WriteLine(element.Value.FirstName+" " +element.Value.LastName+" "+element.Value.PhoneNumber);
+            }
         }
     }
 }
