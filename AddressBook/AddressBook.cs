@@ -197,7 +197,7 @@ namespace AddressBook
                     Console.WriteLine("\n" + element.Value.FirstName + " lives in :: '" + element.Value.City + "' City and '" + element.Value.State + "' State.\n");
                 }
             }
-            else
+            if (x==false)
             {
                 foreach (var element in DictName)
                 {
@@ -224,13 +224,47 @@ namespace AddressBook
             }
             Console.WriteLine("\nNumber of Person found in " + cityState + " are " + countPerson);
         }
-        public void SortByPersonName()
+        public void ChooseSort()
         {
-            Dictionary<string, Contact> sortList = DictName.OrderBy(x => x.Value.FirstName).ToDictionary(x => x.Key, x => x.Value);
-            foreach(var element in sortList)
+            Sort sort = new Sort();
+            Console.WriteLine("Sort By:-");
+            Console.WriteLine("1.Name\n2.City\n3.State\n4.ZipCode");
+            var choice = Console.ReadLine();
+            switch(choice)
             {
-                Console.WriteLine(element.Value.FirstName+" " +element.Value.LastName+" "+element.Value.PhoneNumber);
+                case "1":
+                    Dictionary<string, Contact> sortList = DictName.OrderBy(x => x.Value.FirstName).ToDictionary(x => x.Key, x => x.Value);
+                    foreach (var element in sortList)
+                    {
+                        Console.WriteLine(element.Value.FirstName + " " + element.Value.LastName + " " + element.Value.PhoneNumber);
+                    }
+                    break;
+                case "2":
+                    Dictionary<string, Contact> sortCity = DictName.OrderBy(x => x.Value.City).ToDictionary(x => x.Key, x => x.Value);
+                    foreach (var element in sortCity)
+                    {
+                        Console.WriteLine(element.Value.FirstName + " " + element.Value.LastName + " " + element.Value.City + " " + element.Value.PhoneNumber);
+                    }
+                    break;
+                case "3":
+                    Dictionary<string, Contact> sortState = DictName.OrderBy(x => x.Value.State).ToDictionary(x => x.Key, x => x.Value);
+                    foreach (var element in sortState)
+                    {
+                        Console.WriteLine(element.Value.FirstName + " " + element.Value.LastName + " " + element.Value.State + " " + element.Value.PhoneNumber);
+                    }
+                    break;
+                case "4":
+                    Dictionary<string, Contact> sortZip = DictName.OrderBy(x => x.Value.ZipCode).ToDictionary(x => x.Key, x => x.Value);
+                    foreach (var element in sortZip)
+                    {
+                        Console.WriteLine(element.Value.FirstName + " " + element.Value.LastName + " " + element.Value.State + " " + element.Value.ZipCode + " " + element.Value.PhoneNumber);
+                    }
+                    break;
+                default:
+                    Console.WriteLine("=================================\n!!! Choose valid operation !!!\n=================================");
+                    break;
             }
+
         }
     }
 }

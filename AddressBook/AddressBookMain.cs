@@ -46,13 +46,13 @@ namespace AddressBook
                         addressBook.FindNumOfPerson();
                         break;
                     case "10":
-                        addressBook.SortByPersonName();
+                        addressBook.ChooseSort();
                         break;
                     default:
                         Console.WriteLine("=================================\n!!! Choose valid operation !!!\n=================================");
                         break;
                 }
-                Console.WriteLine("=================================\nChoose the operation::\n3.View Saved Contacts.\n4.Edit Existing Contact.\n5.Delete Existing Contact.\n6.Add Another Contact.\n7.Search Person Name on Basis of City or State.\n8.Find City and State of a Particular Person.\n9.Find Number of Person found in a City or State.\n10.Show Contacts in Sorted order.\n...Press 2 to EXIT the Adress Book Application.\n=================================");
+                Console.WriteLine("=================================\nChoose the operation::\n3.View Saved Contacts.\n4.Edit Existing Contact.\n5.Delete Existing Contact.\n6.Add Another Contact.\n7.Search Person Name on Basis of City or State.\n8.Find City and State of a Particular Person.\n9.Find Number of Person found in a City or State.\n10.Sort.\n...Press 2 to EXIT the Adress Book Application.\n=================================");
                 userInput = Console.ReadLine();
             }
         }
