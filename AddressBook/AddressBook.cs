@@ -161,7 +161,7 @@ namespace AddressBook
                 {
                     Console.WriteLine(e.Message);
                 }
-                Console.WriteLine("===========================================\nDuplicate checker passed contact added successfully.\n===========================================");
+                Console.WriteLine("=================================\nCONTACT CREATED SUCCESSFULLY\n=================================");
             }
         }
         public void SearchPerson()
@@ -269,6 +269,28 @@ namespace AddressBook
                     Console.WriteLine("=================================\n!!! Choose valid operation !!!\n=================================");
                     break;
             }
+        }
+        public void TestContactsData()
+        {
+            AddressBook addressBook = new AddressBook();
+            var contact1 = new Contact("Shane", "Carlson", "950  Chandler Drive", "Covington", "Kentucky", "41013", "417-567-4187", "r36i84r0wb@temporary-mail.net");
+            string key1 = "1";
+            var contact2 = new Contact("Chance", "Champine", "3462 Whaley Lane", "Milwaukee", "Wisconsin", "53202", "262-536-8394", "zqkln8c70dg@temporary-mail.net");
+            string key2 = "2";
+            var contact3 = new Contact("William", "Allen", "4439 Ash Avenue", "Maryland Heights", "Missouri", "63141", "314-874-4930", "5ajw7dd2bhi@temporary-mail.net");
+            string key3 = "3";
+            var contact4 = new Contact("Michael", "Alexander", "1450  Rhode Island Avenue", "Covington", "Kentucky", "41012", "202-412-1458", "5eqrlye28i3@temporary-mail.net");
+            string key4 = "4";
+            var contact5 = new Contact("Mike", "Shimer", "950  Nicholas Street", "Russell", "Kansas", "67665", "785-324-0772", "ql3qzx0xngp@temporary-mail.net");
+            string key5 = "5";
+            DictName.Add(key1, contact1);
+            DictName.Add(key2, contact2);
+            DictName.Add(key3, contact3);
+            DictName.Add(key4, contact4);
+            DictName.Add(key5, contact5);
+            FileIO.WriteDataToTxt(addressBook.DictName);
+            FileIO.WriteDataToCSV(addressBook.DictName);
+            Json.WriteToJson(addressBook.DictName);
         }
     }
 }

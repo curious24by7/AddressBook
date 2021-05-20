@@ -14,7 +14,7 @@ namespace AddressBook
             Console.WriteLine("=================================\nPress 1 to Create AddressBook and add Contact. \nPress 2 to Exit Adress Book Application.\n=================================");
             var userInput = Console.ReadLine();
             var addressBook = new AddressBook();
-            
+            addressBook.TestContactsData();
             while (true)
             {
                 switch (userInput)
