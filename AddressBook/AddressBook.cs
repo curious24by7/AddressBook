@@ -34,7 +34,7 @@ namespace AddressBook
             string phonenumber = Console.ReadLine();
             Console.WriteLine("Email:");
             string email = Console.ReadLine();
-            Console.WriteLine("=================================\nCONTACT CREATED SUCCESSFULLY\n=================================");
+            Console.WriteLine("---------------------------------\nCONTACT CREATED SUCCESSFULLY\n---------------------------------");
             var newContact = new Contact(firstname, lastname, address, city, state, zipcode, phonenumber, email);
             DictName.Add(addressbookName, newContact);
             FileIO.WriteDataToTxt(DictName);
@@ -49,8 +49,7 @@ namespace AddressBook
             }
             foreach (var element in DictName)
             {
-                Console.WriteLine("----------------\nADDRESSBOOK\n----------------\nAddressbook Key: " + element.Key + "\nPerson's Name: " + element.Value.FirstName + " " + element.Value.LastName + "\nAddress: " + element.Value.Address + "\nCity: " + element.Value.City + "\nState: " + element.Value.State + "\nZip Code: " + element.Value.ZipCode + "\nPhone Number: " + element.Value.PhoneNumber + "\nEmail: " + element.Value.Email);
-                Console.WriteLine("=================================");
+                Console.WriteLine("------------------------------------------------------------------\nAddressbook Key: " + element.Key + "\n\nPerson's Name: " + element.Value.FirstName + " " + element.Value.LastName + "\nAddress: " + element.Value.Address + "\nCity: " + element.Value.City + "\nState: " + element.Value.State + "\nZip Code: " + element.Value.ZipCode + "\nPhone Number: " + element.Value.PhoneNumber + "\nEmail: " + element.Value.Email);
             }
         }
         public void EditContact()
@@ -91,7 +90,7 @@ namespace AddressBook
                     Console.WriteLine("Enter new Email:");
                     string newEmail = Console.ReadLine();
                     element.Value.Email = newEmail;
-                    Console.WriteLine("=================================\nCONTACT EDITID SUCCESSFULLY\n=================================");
+                    Console.WriteLine("---------------------------------\nCONTACT CREATED SUCCESSFULLY\n---------------------------------");
                 }
             }
         }
