@@ -22,5 +22,14 @@ namespace AddressBook
                 }
             }
         }
+        public static void ReadFromJson()
+        {
+            string Json = File.ReadAllText(JSONPATH);
+            var Data = JsonConvert.DeserializeObject<Dictionary<string, object>>(Json);
+            foreach (var item in Data)
+            {
+                Console.WriteLine(item);
+            }
+        }
     }
 }
