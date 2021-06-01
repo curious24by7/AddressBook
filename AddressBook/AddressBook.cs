@@ -90,7 +90,7 @@ namespace AddressBook
                     Console.WriteLine("Enter new Email:");
                     string newEmail = Console.ReadLine();
                     element.Value.Email = newEmail;
-                    Console.WriteLine("---------------------------------\nCONTACT CREATED SUCCESSFULLY\n---------------------------------");
+                    Console.WriteLine("---------------------------------\nCONTACT CREATED SUCCESSFULLY\n---------------------------------\n");
                 }
             }
         }
@@ -103,7 +103,7 @@ namespace AddressBook
                 if (nameElement.Value.FirstName == name)
                 {
                     DictName.Remove(nameElement.Key);
-                    Console.WriteLine("=================================\n!! CONTACT DELETED SUCCESSFULLY !!\n=================================");
+                    Console.WriteLine("---------------------------------\n!! CONTACT DELETED SUCCESSFULLY !!\n---------------------------------\n");
                     break;
                 }
                 else
@@ -123,7 +123,7 @@ namespace AddressBook
             {
                 if (element.Value.FirstName.Equals(name))
                 {
-                    Console.WriteLine("=================================\nEntered Person Name already exist in Addressbook named::\n" + element.Key + "\n=================================");
+                    Console.WriteLine("---------------------------------\nEntered Person Name already exist in Addressbook named::\n" + element.Key + "\n---------------------------------");
                     x = true;
                 }
             }
@@ -160,7 +160,7 @@ namespace AddressBook
                 {
                     Console.WriteLine(e.Message);
                 }
-                Console.WriteLine("=================================\nCONTACT CREATED SUCCESSFULLY\n=================================");
+                Console.WriteLine("---------------------------------\nCONTACT CREATED SUCCESSFULLY\n---------------------------------\n");
             }
         }
         public void SearchPerson()
