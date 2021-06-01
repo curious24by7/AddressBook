@@ -17,7 +17,7 @@ namespace AddressBook
             {
                 using (TextWriter tw = new StreamWriter(TXTPATH))
                 {
-                    tw.WriteLine(string.Format("FirstName,LastName,Address,City,State,ZipCode,PhoneNumber,Email"));
+                    tw.WriteLine(string.Format("[FirstName],[LastName],[Address],[City],[State],[ZipCode],[PhoneNumber],[Email]"));
                     foreach (var element in DictName)
                     {
                         tw.WriteLine(string.Format($"{element.Value.FirstName},{element.Value.LastName},{element.Value.Address},{element.Value.City},{element.Value.State},{element.Value.ZipCode},{element.Value.PhoneNumber},{element.Value.Email}"));
@@ -40,6 +40,14 @@ namespace AddressBook
                 }
             }
             else Console.WriteLine("File doesn't exist, Check the Path");
+        }
+        public static void ReadFromCSV()
+        {
+            string[] lines = File.ReadAllLines(CSVPATH);
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
         }
     }
 }
